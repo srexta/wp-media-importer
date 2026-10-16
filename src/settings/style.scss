@@ -1,0 +1,284 @@
+/**
+ * Settings screen styles — subset of react-settings-plugin's design,
+ * scoped to .wpmi-root so wp-admin rules cannot bleed through.
+ */
+
+.wpmi-root {
+	--bg: #fafafa;
+	--surface: #fff;
+	--surface-2: #f6f7f7;
+	--fg: #111;
+	--muted: #6b6b6b;
+	--border: #e5e5e5;
+	--border-strong: #d5d5d6;
+	--accent: #2f6feb;
+	--accent-ring: color-mix(in srgb, var(--accent) 28%, transparent);
+	--success: #17a34a;
+	--danger: #dc2626;
+	--font: "Inter", -apple-system, blinkmacsystemfont, system-ui, "Segoe UI", sans-serif;
+	--mono: ui-monospace, "JetBrains Mono", "SFMono-Regular", menlo, monospace;
+	--r: 8px;
+	--r-lg: 12px;
+
+	color: var(--fg);
+	font: 400 14px/1.5 var(--font);
+	-webkit-font-smoothing: antialiased;
+	margin: 20px 20px 0 0;
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	h1,
+	h2 {
+		margin: 0;
+		padding: 0;
+		line-height: 1.2;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+	}
+
+	p {
+		margin: 0;
+		font-size: inherit;
+	}
+
+	a {
+		color: var(--accent);
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.wpmi-wrap {
+		max-width: 900px;
+	}
+
+	.page-head {
+		margin-bottom: 20px;
+
+		h1 {
+			font-size: 24px;
+		}
+
+		.sub {
+			color: var(--muted);
+			font-size: 13px;
+			margin-top: 4px;
+		}
+	}
+
+	.wpmi-notice {
+		border: 1px solid var(--border);
+		border-left: 4px solid var(--success);
+		background: var(--surface);
+		border-radius: var(--r);
+		padding: 10px 14px;
+		margin-bottom: 16px;
+
+		&.is-error {
+			border-left-color: var(--danger);
+		}
+	}
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 7px;
+		border-radius: var(--r);
+		border: 1px solid var(--border-strong);
+		background: var(--surface);
+		color: var(--fg);
+		padding: 9px 16px;
+		font: 500 13px/1 var(--font);
+		cursor: pointer;
+		min-height: 38px;
+		transition: background 0.12s, border-color 0.12s;
+
+		&:hover {
+			border-color: var(--muted);
+			background: var(--surface-2);
+		}
+
+		&[disabled] {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+	}
+
+	.btn-primary {
+		background: var(--accent);
+		border-color: var(--accent);
+		color: #fff;
+
+		&:hover {
+			background: color-mix(in srgb, var(--accent) 88%, #000);
+			color: #fff;
+		}
+	}
+
+	.btn-danger {
+		color: var(--danger);
+		border-color: color-mix(in srgb, var(--danger) 35%, #fff);
+
+		&:hover {
+			background: color-mix(in srgb, var(--danger) 6%, #fff);
+			border-color: var(--danger);
+		}
+	}
+
+	.card {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--r-lg);
+		max-width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	.card-head {
+		padding: 18px 20px 0;
+
+		h2 {
+			font-size: 16px;
+		}
+
+		p {
+			color: var(--muted);
+			font-size: 13px;
+			margin-top: 5px;
+		}
+	}
+
+	.card-body {
+		padding: 20px;
+	}
+
+	.card-foot {
+		padding: 14px 20px;
+		border-top: 1px solid var(--border);
+		background: var(--surface-2);
+		border-radius: 0 0 var(--r-lg) var(--r-lg);
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.field {
+		padding: 18px 0;
+		border-top: 1px solid var(--border);
+
+		&:first-child {
+			border-top: 0;
+			padding-top: 4px;
+		}
+	}
+
+	.field-row {
+		display: grid;
+		grid-template-columns: 200px minmax(0, 1fr);
+		gap: 8px 28px;
+		align-items: start;
+
+		@media (max-width: 782px) {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+
+	.field-label {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		padding-top: 8px;
+
+		label {
+			font-weight: 600;
+			font-size: 13.5px;
+		}
+
+		.desc {
+			font-size: 12.5px;
+		}
+	}
+
+	.field-control {
+		min-width: 0;
+		display: grid;
+		gap: 8px;
+	}
+
+	.help {
+		color: var(--muted);
+		font-size: 12.5px;
+	}
+
+	.select {
+		max-width: 320px;
+		line-height: 1.5;
+	}
+
+	.input,
+	.select {
+		width: 100%;
+		background: var(--surface);
+		border: 1px solid var(--border-strong);
+		border-radius: var(--r);
+		padding: 9px 12px;
+		min-height: 38px;
+		box-shadow: none;
+		color: var(--fg);
+		transition: border-color 0.12s, box-shadow 0.12s;
+
+		&:focus {
+			outline: 0;
+			border-color: var(--accent);
+			box-shadow: 0 0 0 3px var(--accent-ring);
+		}
+
+		&[type="number"] {
+			max-width: 120px;
+		}
+
+		&.mono {
+			font-family: var(--mono);
+			font-size: 13px;
+		}
+	}
+
+	.card + .card {
+		margin-top: 20px;
+	}
+
+	.range {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		max-width: 360px;
+
+		input {
+			flex: 1;
+			accent-color: var(--accent);
+		}
+
+		output {
+			min-width: 3ch;
+			font-weight: 600;
+			font-variant-numeric: tabular-nums;
+		}
+	}
+
+	.input-group {
+		display: flex;
+		gap: 8px;
+		align-items: center;
+		flex-wrap: wrap;
+
+		.input:not([type="number"]) {
+			flex: 1 1 220px;
+		}
+	}
+}

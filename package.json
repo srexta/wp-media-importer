@@ -1,0 +1,32 @@
+{
+	"name": "wp-media-importer",
+	"version": "1.0.0",
+	"description": "Import stock photos (Pexels and more) into the WordPress media library.",
+	"author": "Sagar Shrestha",
+	"license": "GPL-2.0-or-later",
+	"private": true,
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"format": "wp-scripts format",
+		"lint:js": "wp-scripts lint-js",
+		"lint:css": "wp-scripts lint-style",
+		"plugin-zip": "wp-scripts plugin-zip"
+	},
+	"dependencies": {
+		"@wordpress/api-fetch": "^7.0.0",
+		"@wordpress/components": "^29.0.0",
+		"@wordpress/dom-ready": "^4.0.0",
+		"@wordpress/element": "^6.0.0",
+		"@wordpress/i18n": "^5.0.0"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^33.0.0"
+	},
+	"files": [
+		"build",
+		"includes",
+		"languages",
+		"wp-media-importer.php"
+	]
+}
